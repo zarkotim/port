@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<h1 class ="section-title"> Blogs: </h1>
+
+<div class="section-body">
+<ul>
+<% blog.forEach((blog)=>{%>
+	<li><a class="blog-title" href="/blog/<%=blog._id %>/"><%=blog.title %></a></li>
+<% }) %>
+
+<ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include ../partials/footer %>

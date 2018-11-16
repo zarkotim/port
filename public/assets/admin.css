@@ -1,0 +1,12 @@
+.blog-create{
+	background-color: orange;
+	height: 200px;
+	width: 60%;
+
+}
+
+.blog-create input{
+	padding-top: 10px;
+	display: block;
+	margin-left: 5%;
+}

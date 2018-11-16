@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<div class="section-body" >
+	
+<h1 class="section-title">  Contact me </h1>
+
+<form class="contact-form" action="/admin/" method="post">
+	<label for="contact-email"> Email
+	<input id="contact-email" type="email" name="contact[email]">
+	</label>
+	<label for="contact-name">Name
+	<input  id="contact-name "type="text" name="contact[name]">
+	</label>
+	<label for="contact-text">Text
+	<textarea id="contact-text" type="text" name="contact[text]">
+	</textarea>
+	</label>
+	<button class="btn-contact" type="submit" >Send</button> 
+
+
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+
+<% include ../partials/footer %>
+

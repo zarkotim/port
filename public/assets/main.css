@@ -1,0 +1,186 @@
+.title{
+	color: blue;
+}
+
+*{
+	margin: 0;
+}
+
+nav {
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #5F9EA0;
+    position: fixed;
+     height: 100%;
+     overflow: auto;
+     color: #D3D3D3;
+
+
+}
+nav ul {
+
+	list-style-type: none;
+	
+}
+
+.nav-center{
+	position: absolute;
+	width: 100%;
+	right: 36px;
+
+
+}
+
+   .nav-content {
+   	text-align: center;
+    display: block;
+    color: #DCDCDC;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    
+    width: 100%;
+
+}
+#contact-border {
+	border-bottom: 1px solid gray;
+	padding-bottom: 20px;
+}
+
+ .nav-content:hover {
+    background-color: #2F4F4F;
+    color: white;
+}
+.avatar-section{
+	margin-bottom: 0;
+	padding-bottom: 6px;
+}
+
+.avatar  {
+	margin-left: 40%;
+	padding-top: 10px;
+	
+	border-radius: 100%;
+	width: 50%;
+	height: 5%;
+	margin-bottom: 0;
+}
+
+#name-surname{
+	width: 100%;
+	margin-left: 32px;
+	margin-bottom: 20px;
+	
+	font-size: 19px;
+	border-bottom: 1px solid gray;
+	padding-bottom: 10px;
+}
+#name-surname p{
+	text-align: center;
+}
+
+footer p {
+	position: absolute;
+	bottom: 0;
+	left: 50px;
+	font-style: italic;
+	text-align: center;
+
+}
+
+
+/* QUOTE GENERATOR */
+
+
+.generator{
+	display: block;
+
+	position: absolute;
+	background-color:#5F9EA0;
+	text-align: center;
+	z-index: 0;
+	width: 100%;
+	height: 10%;
+	max-height: 20%;
+	overflow: auto;
+	
+	
+
+}
+
+#content-quote {
+	position: relative;
+	left: 50%;
+	max-width: 40%;
+	height: 55%;
+	padding-bottom: 10px;
+	background-color: #FFF;
+	overflow: auto;
+	font-size: 23px;
+}
+
+#content-author{
+	position: absolute;
+	left: 75%;
+}
+
+
+
+
+body {
+	background-color: yellow;
+}
+
+.section-title{
+padding-left: 50%;
+padding-top: 80px;
+}
+
+.section-body{
+	padding-left: 28%;
+	padding-right: 10%;
+	padding-top: 4%;
+	font-size: 18px;
+}
+
+
+
+/*Contact form  */
+.contact-form {
+	margin-left: 21%;
+	margin-top: 10%;
+	background-color: gray;
+	padding-left: 40px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+
+
+}
+
+.contact-form input, textarea{
+
+	display: block;
+}
+
+
+.contact-form input{
+	height: 25px;
+}
+
+.contact-form textarea{
+
+	height: 100px;
+	width: 400px;
+
+}
+
+.contact-form .btn-contact{
+
+width: 200px;
+height: 50px;
+margin-top: 10px;
+
+
+}

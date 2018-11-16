@@ -1,0 +1,29 @@
+
+
+<% include ../partials/header %>
+<h1> Blog info </h1>
+
+
+<%= blog.title %>
+<ul>
+<% blog.comments.forEach(function(comment){ %>
+	<li><%= comment.text %> </li>
+<% }) %>
+</ul>
+
+
+<h2>Comment Blogs</h2>
+
+
+<form action= "/blog/<%= blog._id %>/comment/" method ="post">
+   
+    <input type="text" placeholder="comment" name="comment[text]">
+
+    
+    
+    <input type="submit">
+    
+</form>
+
+
+<a href="/blog/<%=blog._id %>/comment/new"> Add a commenter </a>

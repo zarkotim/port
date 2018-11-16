@@ -1,0 +1,55 @@
+<% include ../partials/header %>
+
+
+
+<h1 class="section-title"> admin panel</h1>
+
+<div class="section-body">
+
+	<div class="blog-create">
+		<form action="/blog/" method="post">
+			<label for="author" >Author</label>
+		<input id="author" type="text" name="blog[author]" >
+		<label for="title">Title</label>
+		<input id="title" type="text" name="blog[title]" >
+		<label for="body">Text</label>
+		<textarea id="body" type="text" name="blog[content]">  </textarea>
+		<input type="submit">
+		</form>
+		
+	</div>
+	
+<hr>
+
+<div class="user-contact">
+	<h1 class="section-title">Users entries:</h1>
+	<ul>
+		<% contact.forEach(function(contact){ %>
+		<li><a href="/admin/contact/<%= contact._id %>"><%= contact.name %></a></li>
+	<% }) %>
+
+
+
+	</ul>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include ../partials/footer %>
