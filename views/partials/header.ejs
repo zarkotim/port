@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	
 
 	<link rel="stylesheet" type="text/css" href="assets/admin.css">
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
@@ -10,7 +10,12 @@
 </head>
 <body>
 <header>
-	<nav>
+	<nav class="nav-unactive">
+		<div id="bars">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</div>
 		<div class="nav-center">
 		<div class="avatar-section">
 			<img class="avatar" src="/oca.jpg" alt="avatar">
@@ -18,7 +23,7 @@
 		<div id="name-surname">
 			<p>Zarko Timarac </p>
 		</div>
-			<ul> 
+			<ul class=" nav-ul-unactive"> 
 				<li><a class="nav-content" href="/about">About me </a></li>
 				<li><a class="nav-content" href="/blog">Blogs </a></li>
 				<li><a class="nav-content" href="#">My work </a></li>

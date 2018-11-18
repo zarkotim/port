@@ -10,11 +10,21 @@
 
 
 
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 
-
-<script src="/main.js">
+<script src="/main.js"></script>
+<script type="text/javascript">
 	
-	textFit(document.getElementByID('content-quote'));
+ var bar = $("#bars");
+
+ bar.on("click", function(){
+ 	var y = $(".nav-ul-unactive");
+ 	var nav = $("nav")
+ 	nav.toggleClass("nav-active")
+ 	y.toggleClass("active-ul")
+ })
 
 
 </script>
