@@ -1,0 +1,42 @@
+<h3 class="section-comment-title">You want to comment my story? Please do it in a form below: </h3>
+
+<div id="comment">
+
+
+		<div class="comment-content comment-element">
+
+		<form action="/blog/<%= blog._id %>/comment/new" method="POST">
+		<label class="comment-element" >Your name: </label>
+		<input class="comment-element" type="text" name="comment[author]" required>
+		<textarea class="comment-element" rows="7" cols="55" placeholder="Leave a comment..." name="comment[text]"></textarea> 
+		<button class="comment-element btn-submit"> Send </button>
+	</form>
+
+
+		</div>
+</div>
+
+<div id="comments">
+
+
+<% if (blog.comments ){ %>
+
+<h3 class="section-comment-title">Comments: </h3>
+<ol>
+
+<% blog.comments.forEach(function(comment){ %>
+<li id="comment-author"><%= comment.author %> <span id="comment-date">(<%= comment.date %>) </span></li>
+<div id="comment-text">
+<div class="arrow-up"></div>
+<%= comment.text %> 
+</div>
+
+<% }); %>
+	
+</ol>
+
+<%}else {%>
+
+	<h1> No comments </h1>
+<%}%>
+</div>

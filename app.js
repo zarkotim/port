@@ -5,7 +5,7 @@ var router = express.Router();
 var bodyParser  = require("body-parser");
 var Admin = require("./models/admin.js")
 var quoteGenerator = require("./quotegenerator/main.js");
-
+var moment = require("moment");
 
 
 var app = express();
@@ -63,7 +63,10 @@ app.use("/blog/:id/comment/", commentRoutes);
                  if (err) { console.log(" ovaj error") }
                  else {
 
-
+                  // ovde treba staviti comment.date = ...
+                  let d = new Date();
+                  let m = moment(d).format("ll");
+                  comment.date = m;
                      comment.save()
                     blog.comments.push(comment)
 

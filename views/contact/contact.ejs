@@ -1,8 +1,8 @@
 <% include ../partials/header %>
-
+<h1 class="section-title">  Contact me </h1>
 <div class="section-body" >
 	
-<h1 class="section-title">  Contact me </h1>
+
 
 <form class="contact-form" action="/admin/" method="post">
 	<label for="contact-email"> Email
@@ -12,7 +12,7 @@
 	<input  id="contact-name "type="text" name="contact[name]">
 	</label>
 	<label for="contact-text">Text
-	<textarea id="contact-text" type="text" name="contact[text]">
+	<textarea placeholder="Write your message wisely" id="contact-text" type="text" name="contact[text]">
 	</textarea>
 	</label>
 	<button class="btn-contact" type="submit" >Send</button> 

@@ -2,6 +2,7 @@
 	color: blue;
 }
 
+
 *{
 	margin: 0;
 }
@@ -211,6 +212,7 @@ position: relative;
 margin-top: 35px;
 
 padding-left: 50%;
+padding-bottom: 0;
 
 
 
@@ -221,6 +223,14 @@ padding-left: 50%;
 	padding-right: 10%;
 	padding-top: 4%;
 	font-size: 18px;
+	height: 515px;
+	background: green;
+	overflow: auto;
+
+}
+.section-comment {
+	margin-top: 50px;
+	background: yellow;
 }
 
 
@@ -229,10 +239,11 @@ padding-left: 50%;
 .contact-form {
 	margin-left: 21%;
 	margin-top: 10%;
-	background-color: gray;
+	background-color: #FFF;
 	padding-left: 40px;
 	padding-bottom: 30px;
 	padding-top: 30px;
+	border-radius: 7px;
 
 
 }
@@ -240,6 +251,11 @@ padding-left: 50%;
 .contact-form input, textarea{
 
 	display: block;
+	border-bottom-style: dotted; 
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding-top: 3px;
 }
 
 
