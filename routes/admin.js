@@ -1,19 +1,53 @@
 var express = require("express");
 var router = express.Router();
-var Admin = require("../models/admin");
+var User = require("../models/admin");
 var Contact = require("../models/contact");
+var passport = require("passport");
+var middleware = require("../middleware/index");
 
 
+
+// shows the registraion form
 router.get("/register", (req, res)=>{
 	res.render("admin/admincreate")
 })
+
+// handles creation of admin
+router.post("/register", function(req, res){
+  console.log(req.body.admin)
+
+    User.register({username: req.body.username}, req.body.password, function(err, user){
+        if(err){
+            console.log(err)
+            return res.render("register");
+        }
+        passport.authenticate("local")(req, res, function(){
+        	res.redirect("/admin")
+        })
+                                  
+    });     
+})
+
+// shows login form
+
+router.get("/login", (req, res)=>{
+	res.render("admin/adminlogin");
+})
+
+// handles admin login 
+
+router.post("/login", passport.authenticate("local", {successRedirect: "/admin", failureRedirect:"/admin/login"}), (req, res)=>{
+console.log("logged in")
+});
+	
+
 // display registreation of admin
 router.get("/register", (req, res)=>{
 	res.render("admin/admincreate")
 })
 
-// displays user panel interface
-router.get("/", function(req, res){
+// displays admin panel interface
+router.get("/", middleware.isLoggedIn, function(req, res){
 	Contact.find({}, function(err, contact){
 
 
@@ -48,16 +82,6 @@ router.post("/", function(req, res){
 })
 
 
-// handles creation of admin
-router.post("/register", (req, res)=>{
-	console.log(req.body.admin)
-	Admin.create(req.body.admin, (err, blog)=>{
-		if(err){res.redirect("back")}
-		else{
-			
-			res.redirect("/admin")
-		}
-	})
-} )
+
 
 module.exports = router;

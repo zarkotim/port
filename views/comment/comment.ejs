@@ -19,7 +19,7 @@
 <div id="comments">
 
 
-<% if (blog.comments ){ %>
+<% if (blog.comments.length > 0 ){ %>
 
 <h3 class="section-comment-title">Comments: </h3>
 <ol>
@@ -37,6 +37,6 @@
 
 <%}else {%>
 
-	<h1> No comments </h1>
+	<h1> No comments, write one </h1>
 <%}%>
 </div>

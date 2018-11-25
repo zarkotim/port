@@ -1,7 +1,7 @@
 #comment{
 	margin-top: 6%;
 	margin-left: 10%;
-	background: lightblue;
+	background: #45aaf2;
 	border-radius: 6%;
 	width: 55%;
 	height: 60%;
@@ -19,12 +19,7 @@
 	display: block;
 }
 
-.blog-content {
-	position: static;
-	max-height: 200px;
-	background: green;
-	overflow: auto;
-}
+
 
 .btn-submit{
 	height: 36px;
@@ -60,9 +55,10 @@ li {
 
 	margin-left: 10px;
 	margin-top: 10px;
-	background-color: lightblue !important;
+	background-color: #45aaf2 !important;
 	border-radius: 3%;
-	height: 50px;
+	border: 2px solid #FFF;
+	min-height: 50px;
 	
 	max-width: 350px;
 
@@ -74,7 +70,7 @@ width: 0;
 height: 0;
 border-style: solid;
 border-width: 0 15px 27px 15px;
-border-color: transparent transparent lightblue transparent;
+border-color: transparent transparent #45aaf2 transparent;
 position: relative;
 bottom: 10px;
 

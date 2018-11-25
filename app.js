@@ -1,11 +1,14 @@
 const express = require("express");
 const mongoose    = require("mongoose");
-var path    = require("path");
-var router = express.Router();
-var bodyParser  = require("body-parser");
-var Admin = require("./models/admin.js")
-var quoteGenerator = require("./quotegenerator/main.js");
-var moment = require("moment");
+const path    = require("path");
+const router = express.Router();
+const bodyParser  = require("body-parser");
+const User = require("./models/admin.js")
+const quoteGenerator = require("./quotegenerator/main.js");
+const moment = require("moment");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose")
+const LocalStrategy = require('passport-local');
 
 
 var app = express();
@@ -17,11 +20,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
-// add current user to a template
-app.use(function(req, res, next){
-   res.locals.currentUser = req.user;
-   next();
-});
 
 // routes
 var indexRoutes = require("./routes/index.js");
@@ -34,6 +32,21 @@ var commentRoutes = require("./routes/comments.js");
 var Blog = require("./models/blogpost.js");
 var Comment = require("./models/comment.js");
 
+
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Once again Rusty wins cutest dog!",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
 app.use("", indexRoutes);
 app.use("/about", aboutRoutes);
 app.use("/mywork", myWorkRoutes);
@@ -42,6 +55,12 @@ app.use("/contact", contactRoutes);
 app.use("/admin", adminRoutes);
 app.use("/blog/:id/comment/", commentRoutes);
 
+//add current user to a template
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   
+   next();
+});
 
 
 
@@ -58,8 +77,7 @@ app.use("/blog/:id/comment/", commentRoutes);
              console.log(blog + "ovo je blog")
 
              Comment.create(req.body.comment, (err, comment) => {
-                
-                
+              
                  if (err) { console.log(" ovaj error") }
                  else {
 
@@ -67,12 +85,11 @@ app.use("/blog/:id/comment/", commentRoutes);
                   let d = new Date();
                   let m = moment(d).format("ll");
                   comment.date = m;
-                     comment.save()
-                    blog.comments.push(comment)
-
-                     blog.save();
-                     console.log(comment.text)
-                     res.redirect("/blog/" + blog._id)
+                  comment.save()
+                  blog.comments.push(comment)
+                  blog.save();
+                  console.log(comment.text)
+                  res.redirect("/blog/" + blog._id)
                  }
              })
          }
